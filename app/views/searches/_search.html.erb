@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  <%= form_with url: search_path, method: :get do |f| %>
+    <%= f.text_field :search_word %>
+    <%= f.select :model_name
+  <% end %>
+<% end %>
