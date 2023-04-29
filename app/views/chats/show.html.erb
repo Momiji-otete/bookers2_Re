@@ -1,0 +1,18 @@
+<div class=container>
+  <div>
+    <h2><%= @user.name %>さんとのチャット</h2>
+  </div>
+  <div class="message">
+    <%= render "messages", chats: @chats %>
+  </div>
+
+  <div class="errors">
+    <%= render "layouts/error", obj: @chat %>
+  </div>
+
+  <%= form_with model: @chat, local: false do |f| %>
+    <%= f.text_field :message %>
+    <%= f.hidden_field :room_id %>
+    <%= f.submit '送信' %>
+  <% end %>
+</div>
